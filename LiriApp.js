@@ -1,19 +1,16 @@
 require("dotenv").config();
+//allows reading for the keys file
 var keys = require("./keys.js");
+//access to spotify
+var spotify = require('node-spotify-api');
 var spotify = new spotify(keys.spotify);
-
+// bands in town request
+var moment = require('moment');
+//axio stuff
+var axios = require('axios');
+//chalk intergration
+var chalk = require ('chalk');
 //concert-this command
-/*node liri.js concert-this <artist/band name here>
-
-This will search the Bands in Town Artist Events API ("https://rest.bandsintown.com/artists/" + artist + "/events?app_id=codingbootcamp") for an artist and render the following information about each event to the terminal:
-
-Name of the venue
-
-Venue location
-
-Date of the Event (use moment to format this as "MM/DD/YYYY") */
-//spotify-this-song
-
-//movie-this
-
-//do-what-it-says
+//- spotify-this-song command
+//- movie-this command
+//- do-what-it-says command
