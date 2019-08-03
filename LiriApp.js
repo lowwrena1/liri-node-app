@@ -1,18 +1,17 @@
 require("dotenv").config();
-//allows reading for the keys file
+//getting info from the keys.js file
 var keys = require("./keys.js");
-//require fs
+
 var fs=require ("fs");
-//access to spotify
+//spotify info 
 var Spotify = require('node-spotify-api');
 var spotify = new Spotify(keys.spotify);
 var axios = require("axios");
 var moment = require("moment");
-var command = process.argv[2];
-var search = process.argv[3];
+var command = process.argv[2]; // in the number 2 spot on the terminal
+var search = process.argv[3]; // in the number 3 spot on the terminal
 
-/* ---------- Command switch statements ---------- */
-
+//commands needed. 
 switch(command) {
     case "spotify-this-song":
         spotifySong();
@@ -48,7 +47,7 @@ switch(command) {
                 concertURL = "https://rest.bandsintown.com/artists/"+search+"/events?app_id=codingbootcamp";
                 concertThis();
                 break;
-                case "do-what-it-says":
+                case "do-what-it-says": //no need for a function to be added because it's pulling from a file not a url
                         fs.readFile("random.txt", "utf8", (err, data) => {
                             if(err) {
                                 console.log(err);
@@ -58,8 +57,10 @@ switch(command) {
         break;
 };
         
-
-//call function
+});
+    
+};
+//spotify call function
 function spotifySong() {
 spotify.search({ type: 'track', query: search, limit: 1}, function (err, results){
     if(err){
@@ -70,7 +71,7 @@ spotify.search({ type: 'track', query: search, limit: 1}, function (err, results
 
 });
 };
- //Title, Year, IMBD rating, Rotten Tomatoes Rating, Country Produced, Language, Plot, Actors
+ //movie info
 function movieThis() {
     axios.get(movieURL).then(function(response) {
         console.log("\nMovie Title: " + response.data.Title);
@@ -84,7 +85,7 @@ function movieThis() {
     });
 };
 
-//Name of venue, venue location, date of the event
+//venue info
 function concertThis() {
     axios.get(concertURL).then(function(response) {
         console.log("\nBand Playing: " + search);
@@ -95,7 +96,5 @@ function concertThis() {
 
 };
 
-      });
-    
-};
+     
  
