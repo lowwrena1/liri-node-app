@@ -1,5 +1,5 @@
 # Coders and Developers!
-Liri is A an app that uses Node.js. It looks up and displays information from your favorite songs, concerts to you favorite bands, and movies.
+Liri is an app that uses Node.js. It looks up and displays information from your favorite songs, concerts to you favorite bands, and movies.
 # system Requirements: 
 GitBash or Terminal, 
 Nodejs
