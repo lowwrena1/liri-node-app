@@ -11,7 +11,7 @@ var moment = require("moment");
 var command = process.argv[2]; // in the number 2 spot on the terminal
 var search = process.argv[3]; // in the number 3 spot on the terminal
 
-//commands needed. 
+//commands needed spotify-this song, movie-this, concert-this, do-what-this-says.
 switch(command) {
     case "spotify-this-song":
         spotifySong();
