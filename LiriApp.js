@@ -68,7 +68,7 @@ spotify.search({ type: 'track', query: search, limit: 1}, function (err, results
     }
     console.log(results);
 
-})  ;
+});
 };
  //Title, Year, IMBD rating, Rotten Tomatoes Rating, Country Produced, Language, Plot, Actors
 function movieThis() {
@@ -94,8 +94,6 @@ function concertThis() {
     });
 
 };
-// fs is a core Node package for reading and writing files
-var fs = require("fs");
 
       });
     
